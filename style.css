@@ -1,4 +1,4 @@
-
+ 
 * {
   box-sizing: border-box;
 }
@@ -128,7 +128,7 @@ button {
 #tableau tr:nth-child(even){background-color: #f2f2f2;}
 #tableau tr:nth-child(odd){background-color: #f2f2f2;}
 
-#tableau tr:hover {background-color: blue;}
+#tableau tr:hover {background-color: #a9a9a9;}
 
 #tableau th {
   padding-top: 12px;
