@@ -1,6 +1,8 @@
 
 
-fetch('https://spreadsheets.google.com/feeds/cells/1vZHQRGxhb8Bukf3iqK4yTrBLtQf3VVDYdLrWYGDYGCU/1/public/full?alt=json')
+//fetch('https://spreadsheets.google.com/feeds/cells/1vZHQRGxhb8Bukf3iqK4yTrBLtQf3VVDYdLrWYGDYGCU/1/public/full?alt=json')
+fetch('https://spreadsheets.google.com/feeds/cells/1xxIH5neKw5zTKn7dP5I6lbFhfvbVxJ0_3eE6albPeVM/1/public/full?alt=json')
+
     .then(function (response) {
         return response.json();
     })
@@ -13,7 +15,7 @@ fetch('https://spreadsheets.google.com/feeds/cells/1vZHQRGxhb8Bukf3iqK4yTrBLtQf3
 
 
 let dataContainer = [];
-let columnHeads = ["col1","col2","col3"]
+let columnHeads = ["Type","Nom","Système d'exploitation","Prix","Description","Lien"]
 
 let nbLines = 13;
 //let nbCols = 3;
@@ -59,25 +61,26 @@ console.log(sel_discipline);
 
     for (let element of data) {
     let row = table.insertRow();
-
-    
-    for (var i = 0; i < element.length; i++) {
-
-        for (var n = 0; n < catTable.length; n++){
             
-            if (element[0] == catTable[n] && element[1] == sel_discipline){
-                let cell = row.insertCell();
-                let text = document.createTextNode(element[i]);
-                cell.appendChild(text)
+            if (element[6] == sel_discipline || element[6] == "Toutes"){
+
+                //for (var n = 0; n < catTable.length; n++){
+
+                for (var i = 0; i < (element.length-6); i++) {
+                    let cell = row.insertCell();
+                    let text = document.createTextNode(element[i]);
+                    cell.appendChild(text)
+                }
             }
-        }
         
-        }
+        //}
     }
 }
 
 
 function onClick() {
+
+    console.log(catTable);
 
     let table = document.querySelector("table");
   
