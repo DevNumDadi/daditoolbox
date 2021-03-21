@@ -1,5 +1,4 @@
 
-
 //fetch('https://spreadsheets.google.com/feeds/cells/1vZHQRGxhb8Bukf3iqK4yTrBLtQf3VVDYdLrWYGDYGCU/1/public/full?alt=json')
 fetch('https://spreadsheets.google.com/feeds/cells/1xxIH5neKw5zTKn7dP5I6lbFhfvbVxJ0_3eE6albPeVM/1/public/full?alt=json')
 
@@ -12,6 +11,18 @@ fetch('https://spreadsheets.google.com/feeds/cells/1xxIH5neKw5zTKn7dP5I6lbFhfvbV
     .catch(function (err) {
         console.log('error: ' + err);
     });
+
+
+function unCheck(){
+    var checkboxes = document.getElementsByTagName('input');
+
+    for (var i=0; i<checkboxes.length; i++)  {
+      if (checkboxes[i].type == 'checkbox')   {
+        checkboxes[i].checked = false;
+      }
+    }
+}
+
 
 
 let dataContainer = [];
@@ -83,6 +94,7 @@ function onClick() {
     console.log(catTable);
 
     let table = document.querySelector("table");
+    table.scrollIntoView({ behavior: 'smooth'});
   
     while (table.firstChild) {
         table.removeChild(table.firstChild);
