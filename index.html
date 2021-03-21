@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+	 
+	<head>
+		<title>JSON database</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		
+		<script type="text/javascript" src="JS_sheet.js"></script>
+
+	</head>
+
+	<body>
+
+		<h1 id="titleText">Bienvenue dans la Dadi'Toolbox !</h1>
+
+		<div>
+			<h2>Quelle est votre discipline ?</h2>
+
+			<select name="my_html_select_box" id="Disciplines">
+
+				<option selected="yes" onclick="onClick()">Musique</option>
+				<option onclick="onClick()">Danse</option>
+				<option onclick="onClick()">Théâtre</option>
+
+			</select>
+
+<!--			<div class="dropdown">
+			    <button  class="dropbtn" id="showCheck">Sélectionner
+			      <i class="fa fa-caret-down"></i>
+			      <img src="img/dropdown_arrow.svg">
+			    </button>
+			    <div class="dropdown-content">
+			      <a onclick="showMenu('Musique')">Musique</a>
+			      <a onclick="showMenu('Danse')">Danse</a>
+			      <a onclick="showMenu('Théâtre')">Théâtre</a>
+			    </div>
+			</div>! -->
+
+		</div>
+
+		<div>
+			<h2>Vous êtes plutôt ?</h2>
+			<input class="checkBox" type="checkbox" id="Check0" checked="no" onclick="filterCol(0, 'Windows')">
+			<label>Windows</label> <br>
+			<input class="checkBox" type="checkbox" id="Check1" checked="no" onclick="filterCol(1,'Mac')">
+			<label>Mac</label> <br>
+			<input class="checkBox" type="checkbox" id="Check2" checked="no" onclick="filterCol(2,'Linux')">
+			<label>Linux</label> <br>
+			<input class="checkBox" type="checkbox" id="Check3" checked="no" onclick="filterCol(3,'Android')">
+			<label>Android</label> <br>
+			<input class="checkBox" type="checkbox" id="Check4" checked="no" onclick="filterCol(4,'iOS')">
+			<label>iOS (iphone, ipad)</label> <br>			
+		</div>
+
+
+		<div class="message">
+
+			<h2 id="categories"></h2>
+
+
+			<!--<button onclick="onClick()">Click to see table</button>-->
+
+				<table id="tableau">
+				<!-- here goes our data! -->
+				</table>
+
+			<h1 ></h1>
+		</div>
+
+
+	</body>
+
+</html>
