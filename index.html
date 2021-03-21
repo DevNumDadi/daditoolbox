@@ -3,7 +3,7 @@
 <html>
 	 
 	<head>
-		<title>JSON database</title>
+		<title>La Dadi'Toolbox</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
@@ -12,14 +12,14 @@
 
 	</head>
 
-	<body>
+	<body onload="unCheck()">
 
 		<h1 id="titleText">Bienvenue dans la Dadi'Toolbox !</h1>
 
 		<div>
 			<h2>Quelle est votre discipline ?</h2>
 
-			<select name="my_html_select_box" id="Disciplines">
+			<select class="dropdown" name="my_html_select_box" id="Disciplines">
 
 				<option selected="yes" onclick="onClick()">Musique</option>
 				<option onclick="onClick()">Danse</option>
@@ -43,25 +43,25 @@
 
 		<div>
 			<h2>Vous êtes plutôt ?</h2>
-			<input class="checkBox" type="checkbox" id="Check0" checked="no" onclick="filterCol(0, 'Windows')">
+			<input class="checkBox" type="checkbox" id="Check0" checked="" value="0" onclick="filterCol(0, 'Windows')">
 			<label>Windows</label> <br>
-			<input class="checkBox" type="checkbox" id="Check1" checked="no" onclick="filterCol(1,'Mac')">
+			<input class="checkBox" type="checkbox" id="Check1" checked="" value="0" onclick="filterCol(1,'Mac')">
 			<label>Mac</label> <br>
-			<input class="checkBox" type="checkbox" id="Check2" checked="no" onclick="filterCol(2,'Linux')">
+			<input class="checkBox" type="checkbox" id="Check2" checked="" value="0" onclick="filterCol(2,'Linux')">
 			<label>Linux</label> <br>
-			<input class="checkBox" type="checkbox" id="Check3" checked="no" onclick="filterCol(3,'Android')">
+			<input class="checkBox" type="checkbox" id="Check3" checked="" value="0" onclick="filterCol(3,'Android')">
 			<label>Android</label> <br>
-			<input class="checkBox" type="checkbox" id="Check4" checked="no" onclick="filterCol(4,'iOS')">
+			<input class="checkBox" type="checkbox" id="Check4" checked="" value="0" onclick="filterCol(4,'iOS')">
 			<label>iOS (iphone, ipad)</label> <br>			
 		</div>
 
 
-		<div class="message">
+		<div class="result">
 
 			<h2 id="categories"></h2>
 
 
-			<button onclick="onClick()">Click to see table</button>
+			<button onclick="onClick()">Afficher les résultats</button>
 
 				<table id="tableau">
 				<!-- here goes our data! -->
