@@ -115,7 +115,4 @@ function filterCol(n, cat){
     else {
         catTable.splice(catTable.indexOf(cat), 1);
     }
-
-
-    onClick();
-    }
+}
