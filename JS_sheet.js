@@ -68,19 +68,23 @@ function generateTable(table, data) {
     
 var sel = document.getElementById('Disciplines');
 let sel_discipline = sel.value;
-console.log(sel_discipline);  
 
     for (let element of data) {
     let row = table.insertRow();
+
             
             if (element[6] == sel_discipline || element[6] == "Toutes"){
 
-                //for (var n = 0; n < catTable.length; n++){
+                if (catTable[0] == element[7] || catTable[1] == element[8] || catTable[2] == element[9] || catTable[3] == element[10] || catTable[4] == element[11]){
+                    
+                    for (var i = 0; i < (element.length-6); i++) {
+                        
 
-                for (var i = 0; i < (element.length-6); i++) {
-                    let cell = row.insertCell();
-                    let text = document.createTextNode(element[i]);
-                    cell.appendChild(text)
+                        let cell = row.insertCell();
+                        let text = document.createTextNode(element[i]);
+                        cell.appendChild(text)
+                    }
+
                 }
             }
         
@@ -90,8 +94,6 @@ console.log(sel_discipline);
 
 
 function onClick() {
-
-    console.log(catTable);
 
     let table = document.querySelector("table");
     table.scrollIntoView({ behavior: 'smooth'});
@@ -105,14 +107,14 @@ function onClick() {
 }
 
 
-let catTable = []
+let catTable = [0,0,0,0,0]
 
 function filterCol(n, cat){
     const cb = document.getElementById('Check'+ n);
     if  (cb.checked){
-        catTable.push(cat);        
+        catTable[n] = 1;        
     }
     else {
-        catTable.splice(catTable.indexOf(cat), 1);
+        catTable[n] = 0;
     }
 }
