@@ -96,7 +96,7 @@ let sel_discipline = sel.value;
 function onClick() {
 
     let table = document.querySelector("table");
-    //table.scrollIntoView({ behavior: 'smooth'});
+    table.scrollIntoView({ behavior: 'smooth'});
   
     while (table.firstChild) {
         table.removeChild(table.firstChild);
