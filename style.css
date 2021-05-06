@@ -78,7 +78,6 @@ button:hover {background-color: #e60000;}
   color: white;
 }
 
-
 .result {
     user-select: none; /* supported by Chrome and Opera */
    -webkit-user-select: none; /* Safari */
