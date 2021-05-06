@@ -25,6 +25,7 @@ function unCheck(){
 
 
 
+
 let dataContainer = [];
 let columnHeads = ["Type","Nom","Système d'exploitation","Prix","Description","Lien"]
 
@@ -52,6 +53,7 @@ function saveData(data) {
 }
 
 
+
 function generateTableHead(table, data) {
   let thead = table.createTHead();
   let row = thead.insertRow();
@@ -61,6 +63,22 @@ function generateTableHead(table, data) {
     th.appendChild(text);
     row.appendChild(th);
   }
+}
+
+
+function insertLink(){
+    // Create anchor element.
+    var a = document.createElement('a');
+    // Create the text node for anchor element.
+    var link = document.createTextNode("This is link");
+    // Append the text node to anchor element.
+    a.appendChild(link); 
+    // Set the title.
+    a.title = "This isaaaa Link"; 
+    // Set the href property.
+    a.href = "https://www.geeksforgeeks.org"; 
+    // Append the anchor element to the body.
+    document.body.appendChild(a); 
 }
 
 
@@ -77,13 +95,26 @@ let sel_discipline = sel.value;
 
                 if (catTable[0] == element[7] || catTable[1] == element[8] || catTable[2] == element[9] || catTable[3] == element[10] || catTable[4] == element[11]){
                     
-                    for (var i = 0; i < (element.length-6); i++) {
-                        
+                    for (var i = 0; i < (element.length-7); i++) {
 
                         let cell = row.insertCell();
                         let text = document.createTextNode(element[i]);
-                        cell.appendChild(text)
+                        cell.appendChild(text);
+
                     }
+
+                    let cell = row.insertCell();
+
+                    var a = document.createElement('a');
+                    var link = document.createTextNode(element[5]);
+
+                    a.appendChild(link);
+                    a.target= '_blank';
+                    a.href = element[5];
+                    a.title = element[1];
+                    
+                    cell.appendChild(a);
+
 
                 }
             }
